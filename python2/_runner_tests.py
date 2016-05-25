@@ -11,6 +11,7 @@ from runner.runner_tests.test_helper import TestHelper
 def suite():
     loader = unittest.TestLoader()
     suite = unittest.TestSuite()
+    loader.sortTestMethodsUsing = None
     suite.addTests(loader.loadTestsFromTestCase(TestMountain))
     suite.addTests(loader.loadTestsFromTestCase(TestSensei))
     suite.addTests(loader.loadTestsFromTestCase(TestHelper))
