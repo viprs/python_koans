@@ -9,10 +9,11 @@ from runner.runner_tests.test_sensei import TestSensei
 from runner.runner_tests.test_helper import TestHelper
 
 def suite():
+    loader = unittest.TestLoader()
     suite = unittest.TestSuite()
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestMountain))
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestSensei))
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestHelper))
+    suite.addTests(loader.loadTestsFromTestCase(TestMountain))
+    suite.addTests(loader.loadTestsFromTestCase(TestSensei))
+    suite.addTests(loader.loadTestsFromTestCase(TestHelper))
     return suite
 
 if __name__ == '__main__':
