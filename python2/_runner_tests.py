@@ -8,6 +8,7 @@ from runner.runner_tests.test_mountain import TestMountain
 from runner.runner_tests.test_sensei import TestSensei
 from runner.runner_tests.test_helper import TestHelper
 
+
 def suite():
     loader = unittest.TestLoader()
     suite = unittest.TestSuite()
