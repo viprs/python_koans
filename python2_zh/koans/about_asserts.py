@@ -21,7 +21,7 @@ class AboutAsserts(Koan):
         """
         assertTrue可以在第二个参数添加一些提示，帮助你发现错误
         """
-        self.assertTrue(False, "这里应该填True -- 请修正")
+        self.assertTrue(False, "This should be True -- please fix it")
 
     def test_fill_in_values(self):
         """

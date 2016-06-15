@@ -22,18 +22,16 @@ class AboutMethods(Koan):
         try:
             my_global_function()
         except Exception as exception:
-            # NOTE: The .__name__ attribute will convert the class
-            # into a string value.
+            # 提示： 对象的 .__name__ 属性将类名转换成一个字符串
             self.assertEqual(__, exception.__class__.__name__)
             self.assertMatch(
                 r'my_global_function\(\) takes exactly 2 arguments \(0 given\)',
                 exception[0])
+            # 注意，小括号前有反斜杠
 
         try:
             my_global_function(1, 2, 3)
         except Exception as e:
-
-            # Note, watch out for parenthesis. They need slashes in front!
             self.assertMatch(__, e[0])
 
     # ------------------------------------------------------------------
