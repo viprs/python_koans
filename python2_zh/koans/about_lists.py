@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#
-# Based on AboutArrays in the Ruby Koans
-#
 
 from runner.koan import *
 
@@ -86,13 +83,14 @@ class AboutLists(Koan):
         self.assertEqual(__, popped_value)
         self.assertEqual(__, stack)
 
-        # Notice that there is a "pop" but no "push" in python?
+        # 我们注意到，python里有pop 但是没有push
 
-        # Part of the Python philosophy is that there ideally should be one and
-        # only one way of doing anything. A 'push' is the same as an 'append'.
+        # Python 哲学认为：最好的方法是一件事情有一个方法就够了。
+        # 'push' 的功能与 'append' 是一样的，所以没有必要有了！
 
-        # To learn more about this try typing "import this" from the python
-        # console... ;)
+        # 如果想了解更多关于 Python 的哲学
+        # 在python 控制台敲入 "import this"
+        # 有惊喜!
 
     def test_use_deques_for_making_queues(self):
         from collections import deque
