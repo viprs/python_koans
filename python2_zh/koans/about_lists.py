@@ -83,9 +83,9 @@ class AboutLists(Koan):
         self.assertEqual(__, popped_value)
         self.assertEqual(__, stack)
 
-        # 我们注意到，python里有pop 但是没有push
+        # 我们注意到，python里有 'pop' 但是没有 'push'
 
-        # Python 哲学认为：最好的方法是一件事情有一个方法就够了。
+        # Python 哲学认为：做一件事情有一个方法就够了。
         # 'push' 的功能与 'append' 是一样的，所以没有必要有了！
 
         # 如果想了解更多关于 Python 的哲学
