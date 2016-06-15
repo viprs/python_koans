@@ -39,9 +39,9 @@ class Sensei(MockableTestResult):
     def addSuccess(self, test):
         if self.passesCount():
             MockableTestResult.addSuccess(self, test)
-            self.stream.writeln( \
+            self.stream.writeln(
                 "  {0}{1}{2} has expanded your awareness.{3}{4}" \
-                .format(Fore.GREEN, Style.BRIGHT, test._testMethodName, \
+                .format(Fore.GREEN, Style.BRIGHT, test._testMethodName,
                 Fore.RESET, Style.NORMAL))
             self.pass_count += 1
 
@@ -191,7 +191,7 @@ class Sensei(MockableTestResult):
         if self.failures:
             turn = self.pass_count % 37
 
-            zenness = "";
+            zenness = ""
             if turn == 0:
                 zenness = "Beautiful is better than ugly."
             elif turn == 1 or turn == 2:
