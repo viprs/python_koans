@@ -23,11 +23,11 @@ class AboutTuples(Koan):
         except Exception as ex:
             self.assertEqual(AttributeError, type(ex))
 
-            # Note, assertMatch() uses regular expression pattern matching,
-            # so you don't have to copy the whole message.
+            # 注意, assertMatch() 使用正则表达式进行匹配
+            # 所以，你不必复制整个消息
             self.assertMatch(__, ex[0])
 
-        # Tuples are less flexible than lists, but faster.
+        # Tuples 比 Lists更快，但是没有list灵活
 
     def test_tuples_can_only_be_changed_through_replacement(self):
         count_of_three = (1, 2, 5)
@@ -48,7 +48,7 @@ class AboutTuples(Koan):
 
     def test_creating_empty_tuples(self):
         self.assertEqual(__, ())
-        self.assertEqual(__, tuple())  # Sometimes less confusing
+        self.assertEqual(__, tuple())  # 这种用法更好，更容易让人理解
 
     def test_tuples_can_be_embedded(self):
         lat = (37, 14, 6, 'N')

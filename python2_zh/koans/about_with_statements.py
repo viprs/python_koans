@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#
-# Based on AboutSandwichCode in the Ruby Koans
-#
 
 from runner.koan import *
 
@@ -19,7 +16,7 @@ class AboutWithStatements(Koan):
             finally:
                 f.close()
         except IOError:
-            # should never happen
+            # 永远不应该被执行
             self.fail()
 
     def test_counting_lines(self):

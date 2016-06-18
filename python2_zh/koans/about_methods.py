@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#
-# Partially based on AboutMethods in the Ruby Koans
-#
 
 from runner.koan import *
 
@@ -16,8 +13,7 @@ class AboutMethods(Koan):
     def test_calling_a_global_function(self):
         self.assertEqual(__, my_global_function(2, 3))
 
-    # NOTE: Wrong number of arguments is not a SYNTAX error, but a
-    # runtime error.
+    # 注意，参数个数错误并不是语法错误，而是运行时错误
     def test_calling_functions_with_wrong_number_of_arguments(self):
         try:
             my_global_function()
@@ -41,8 +37,8 @@ class AboutMethods(Koan):
 
     def test_which_does_not_return_anything(self):
         self.assertEqual(__, self.pointless_method(1, 2))
-        # Notice that methods accessed from class scope do not require
-        # you to pass the first "self" argument?
+        # 提示，class的方法不需要你传递self参数，类帮你完成了
+
 
     # ------------------------------------------------------------------
 
@@ -134,7 +130,7 @@ class AboutMethods(Koan):
             return "Fido"
 
         def _tail(self):
-            # Prefixing a method with an underscore implies private scope
+            # 前置下划线表示这是一个类的私有方法
             return "wagging"
 
         def __password(self):
@@ -147,20 +143,20 @@ class AboutMethods(Koan):
     def test_private_access_is_implied_but_not_enforced(self):
         rover = self.Dog()
 
-        # This is a little rude, but legal
+        # 可以访问私有方法，但不推荐这么做
         self.assertEqual(__, rover._tail())
 
     def test_double_underscore_attribute_prefixes_cause_name_mangling(self):
-        """Attributes names that start with a double underscore get
-        mangled when an instance is created."""
+        """当创建一个实例时，以双下划线(__)开头的属性名就会损坏，
+        就不能使用普通调用了."""
         rover = self.Dog()
         try:
-            #This may not be possible...
+            #直接调用__password方法就不行了
             password = rover.__password()
         except Exception as ex:
             self.assertEqual(__, ex.__class__.__name__)
 
-        # But this still is!
+        # 但下面这种方法可以访问
         self.assertEqual(__, rover._Dog__password())
 
         # Name mangling exists to avoid name clash issues when subclassing.
