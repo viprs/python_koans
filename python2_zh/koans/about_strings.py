@@ -87,9 +87,21 @@ world!
         there = "world"
         hi += there
         self.assertEqual(__, original)
+        self.assertEqual(__, hi)
 
     def test_most_strings_interpret_escape_characters(self):
         string = "\n"
         self.assertEqual('\n', string)
         self.assertEqual("""\n""", string)
         self.assertEqual(__, len(string))
+
+    def test_trim_strings_with_strip(self):
+        original = " Hello, world!  "
+        self.assertEqual("Hello, world!", original.strip())
+        self.assertEqual(__, original.lstrip())
+        self.assertEqual(__, original.rstrip())
+
+        original = "\t Hello, world!  \n"
+        self.assertEqual(__, original.strip())
+        self.assertEqual(__, original.lstrip())
+        self.assertEqual(__, original.rstrip())
